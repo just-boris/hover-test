@@ -1,0 +1,39 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover zones test</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <style>
+      .disable-hover * {
+        pointer-events: none;
+      }
+      .block {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+      }
+      .block:hover {
+        background: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="document.body.classList.toggle('disable-hover')">
+      toggle
+    </button>
+    <div id="app"></div>
+    <script src="https://unpkg.com/lodash@4.17.15/lodash.js"></script>
+    <script>
+      const app = document.getElementById("app");
+      for (var i = 0; i < 100; i++) {
+        const div = document.createElement("div");
+        div.className = "block";
+        app.appendChild(div);
+      }
+    </script>
+  </body>
+</html>
